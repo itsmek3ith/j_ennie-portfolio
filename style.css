@@ -1,0 +1,30 @@
+  /*Custom Font Family*/
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+     background-color:antiquewhite ;/*background-color*/ 
+    color: #d76565 ;
+    padding: 30px;/*Box model (padding)*/
+    margin: 0;
+
+}
+
+header{
+    background-color: rgb(69, 53, 53);
+    text-align: center;
+    padding: 40px 30px;
+    border-radius: 4px;
+    margin-bottom: 30px; /*Box model (margin)*/
+}
+
+main{
+    max-width: 800px;
+    margin: 0;
+}
+
+/*4. pseudo-class rule for interactive lists*/
+li:hover{
+    color: #ff69b4; /* Deep pink highlight */
+    font-weight: bold;
+    cursor: pointer; 
+}
+ 
