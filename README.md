@@ -9,3 +9,6 @@ A beautifully tailored landing page modeled after the style and career milestone
  
 ## Author 
 * **Keith Adongo** - *Main developer * - [itsmek3ith](https://github.com)
+
+## license
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
