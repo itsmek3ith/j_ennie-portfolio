@@ -6,3 +6,4 @@ A beautifully tailored landing page modeled after the style and career milestone
 
 1. Clone this project repository locally
 2. Launch the 'index.html' file in any updated web browser to explore the design layout.  
+ 
