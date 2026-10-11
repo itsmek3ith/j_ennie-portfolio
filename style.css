@@ -79,6 +79,67 @@ li:hover{
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
  
- 
+ /* --- Submission Form Block Layout --- */
+#user-submission-form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffb6c1; /* Soft pink label text color */
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: rgba(255, 255, 255, 0.08); /* Semi-transparent inputs */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Interactive Input Focus State (Pseudo-class validation feedback) */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff69b4; /* Border glows pink when active */
+    background-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 8px rgba(255, 105, 180, 0.4);
+}
+
+/* Form Action Button styling */
+#form-submit-btn {
+    background-color: #ff69b4;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#form-submit-btn:hover {
+    background-color: #d11141; /* Shifts to Deep Crimson on hover */
+    transform: scale(1.02);
+}
  
  
