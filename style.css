@@ -73,6 +73,37 @@ a { color: var(--pink-dark); }
   padding: 6rem 1.25rem 5rem;
   border-bottom: 8px solid var(--pink);
 
+  .hero-section {
+    /* Set up the background image */
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsuIBBmE2FoT8KRK4KCPzrnp9O-uvWphdzsN14dLOz3A&s=10');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Ensure the container spans the full view */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Aligns text to the left */
+    padding: 10%;
+    
+    /* Optional: Adds a subtle dark tint to the image to improve text readability */
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.2); 
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif; /* Or your preferred serif font */
+    font-size: 4rem;
+    color: #f4f1ea; /* An off-white or cream color matching the preview */
+    line-height: 1.1;
+    font-weight: bold;
+    max-width: 800px;
+    
+    /* Crucial: Adds a soft drop shadow behind the text so it pops against the background */
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+}
 }
 
 .hero-content { max-width: 1100px; margin: 0 auto; }
