@@ -1,145 +1,194 @@
-  /*Custom Font Family*/
-  body{
-    font-family: Arial, Helvetica, sans-serif;
-     background-color:antiquewhite ;/*background-color*/ 
-    color: #d76565 ;
-    padding: 30px;/*Box model (padding)*/
-    margin: 0;
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@400;500;700&display=swap");
 
-}
-
-header h1 {
-    color: #e62f8a;
-    background-color: rgb(69, 53, 53);
-    text-align: center;
-    padding: 40px 30px;
-    border-radius: 4px;
-    margin-bottom: 30px; /*Box model (margin)*/
+:root {
+  --ink: #2a1630;
+  --paper: #fbf7f8;
+  --blush: #f9dde6;
+  --pink: #e8387f;
+  --pink-dark: #b8205c;
+  --muted: #6b5a70;
+  --line: #e6d3da;
+  --font-display: "Bodoni Moda", "Didot", Georgia, serif;
+  --font-body: "DM Sans", "Segoe UI", Arial, sans-serif;
+  --nav-height: 64px;
 }
 
-/* --- 1 . Introduction Section Styles --- */
-#intro p {
-    color: #cc38e7;
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--paper);
 }
 
-/* --- 2 . Biography Section Styles --- */ 
-#bio h2 {
-    color: #d11141;
+img { display: block; max-width: 100%; height: auto; border-radius: 6px; }
+a { color: var(--pink-dark); }
+:focus-visible { outline: 3px solid var(--pink); outline-offset: 3px; }
+
+/* Navigation */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 1100px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+}
+.nav-links { display: flex; gap: 1.5rem; margin: 0; padding: 0; list-style: none; }
+.nav-links a {
+  color: var(--muted);
+  font-weight: 500;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); border-bottom-color: var(--pink); }
+
+/* Hero */
+.hero-section {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 6rem 1.25rem 5rem;
+  border-bottom: 8px solid var(--pink);
+}
+.hero-content { max-width: 1100px; margin: 0 auto; }
+.main-title {
+  max-width: 14ch;
+  margin: 0 0 1.25rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.75rem, 9vw, 6.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.hero-subtitle { max-width: 48ch; margin: 0; font-size: 1.2rem; color: var(--blush); }
+
+/* Main content */
+.content-wrapper { max-width: 820px; margin: 0 auto; padding: 3rem 1.25rem 2rem; }
+#intro { font-size: 1.25rem; color: var(--muted); }
+.section-block, #biography {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+.section-heading {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.15;
+}
+.bio-text { max-width: 65ch; }
+#biography img, #favourites img {
+  margin: 1.5rem 0;
+  box-shadow: 0 6px 20px rgba(42, 22, 48, 0.15);
 }
 
-#bio p {
-    color: #1a416b; /* Muted Navy Blue Paragraph text */
+/* List */
+.styled-list { margin: 1.5rem 0 0; padding: 0; list-style: none; }
+.styled-list li {
+  position: relative;
+  padding: 0.85rem 0 0.85rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+.styled-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.45rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--pink);
 }
 
-/* --- 3 . Favorites  S ection Styles ---*/
-#favorites h2 {
-    color:rgb(67, 7, 7) ;
+/* Live button */
+.button-container { margin-top: 3rem; text-align: center; }
+#live-action-btn {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--pink-dark);
+  border: 0;
+  border-radius: 999px;
+  padding: 0.95rem 2rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+#live-action-btn:hover { background: var(--ink); }
+#live-action-btn:active { transform: translateY(1px); }
+
+/* Contact form */
+#contact-section-form {
+  max-width: 820px;
+  margin: 3.5rem auto 0;
+  padding: 2.5rem 1.25rem 4rem;
+  background: var(--blush);
+  border-top: 0;
+}
+#user-submission-form { max-width: 560px; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem; }
+.form-group label { font-weight: 700; }
+.form-group input, .form-group textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.75rem 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group input:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px rgba(232, 56, 127, 0.25);
+}
+.form-group textarea { resize: vertical; min-height: 130px; }
+#for-submit-button {
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: var(--ink);
+  border: 0;
+  border-radius: 6px;
+  padding: 0.85rem 1.75rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#for-submit-button:hover { background: var(--pink-dark); }
+
+/* Mobile */
+@media (max-width: 600px) {
+  .nav-links { gap: 0.9rem; font-size: 0.9rem; }
+  .hero-section { padding: 4rem 1.25rem 3rem; }
 }
 
-#favorites ul {
-    color: #5d3a9b;
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
 }
-
-main{
-    max-width: 800px;
-    margin: 0;
-}
-
-/*4. pseudo-class rule for interactive lists*/
-li:hover{
-    color: #ff69b4; /* Deep pink highlight */
-    font-weight: bold;
-    font-style: italic;
-    cursor: pointer; 
-}
- 
-/* --- Live Button Core Styles ---*/
-.button-container {
-    text-align: center;
-    margin: 250px 0;
-}
-
-#live-action-btn{
-    background-color: #ff69b4;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-/* --- Interactive Hover State (Pseudo-class rule) --- */
-#live-action-button:hover {
-    background-color: #d11141;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
- 
- /* --- Submission Form Block Layout --- */
-#user-submission-form {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    color: #ffb6c1; /* Soft pink label text color */
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 15px;
-    background-color: rgba(255, 255, 255, 0.08); /* Semi-transparent inputs */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    color: #ffffff;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
-
-/* Interactive Input Focus State (Pseudo-class validation feedback) */
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #ff69b4; /* Border glows pink when active */
-    background-color: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 0 8px rgba(255, 105, 180, 0.4);
-}
-
-/* Form Action Button styling */
-#form-submit-btn {
-    background-color: #ff69b4;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-transform: uppercase;
-    width: 100%;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-#form-submit-btn:hover {
-    background-color: #d11141; /* Shifts to Deep Crimson on hover */
-    transform: scale(1.02);
-}
- 
- 
